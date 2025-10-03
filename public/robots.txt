@@ -1,0 +1,18 @@
+# Nike E-Commerce by Tonde - Robots.txt
+User-agent: *
+Allow: /
+Allow: /men
+Allow: /women
+Allow: /kids
+Allow: /sale
+Allow: /product/*
+Disallow: /checkout
+Disallow: /auth
+Disallow: /order-success
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://nike-ecommerce-tonde.vercel.app/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
