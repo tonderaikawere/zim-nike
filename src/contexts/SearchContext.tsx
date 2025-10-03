@@ -1,4 +1,8 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
+import shoe1 from '@/assets/shoe-1.jpg';
+import shoe2 from '@/assets/shoe-2.jpg';
+import shoe3 from '@/assets/shoe-3.jpg';
+import shoe4 from '@/assets/shoe-4.jpg';
 
 export interface Product {
   id: string;
@@ -30,7 +34,7 @@ const allProducts: Product[] = [
     id: '1',
     name: 'Air Force Runner',
     price: 95.00,
-    image: '/src/assets/shoe-1.jpg',
+    image: shoe1,
     category: 'Running',
     gender: 'unisex',
     brand: 'Nike',
@@ -41,7 +45,7 @@ const allProducts: Product[] = [
     id: '2',
     name: 'Court Vision Pro',
     price: 120.00,
-    image: '/src/assets/shoe-2.jpg',
+    image: shoe2,
     category: 'Basketball',
     gender: 'men',
     brand: 'Nike',
@@ -52,7 +56,7 @@ const allProducts: Product[] = [
     id: '3',
     name: 'Flex Trainer',
     price: 85.00,
-    image: '/src/assets/shoe-3.jpg',
+    image: shoe3,
     category: 'Training',
     gender: 'women',
     brand: 'Nike',
@@ -63,7 +67,7 @@ const allProducts: Product[] = [
     id: '4',
     name: 'React Velocity',
     price: 105.00,
-    image: '/src/assets/shoe-4.jpg',
+    image: shoe4,
     category: 'Running',
     gender: 'unisex',
     brand: 'Nike',
@@ -74,7 +78,7 @@ const allProducts: Product[] = [
     id: '5',
     name: 'Air Max Elite',
     price: 140.00,
-    image: '/src/assets/shoe-1.jpg',
+    image: shoe1,
     category: 'Running',
     gender: 'men',
     brand: 'Nike',
@@ -85,7 +89,7 @@ const allProducts: Product[] = [
     id: '6',
     name: 'Court Legend',
     price: 130.00,
-    image: '/src/assets/shoe-2.jpg',
+    image: shoe2,
     category: 'Basketball',
     gender: 'men',
     brand: 'Nike',
@@ -96,7 +100,7 @@ const allProducts: Product[] = [
     id: '7',
     name: 'Air Max 270 Kids',
     price: 75.00,
-    image: '/src/assets/shoe-3.jpg',
+    image: shoe3,
     category: 'Lifestyle',
     gender: 'kids',
     ageGroup: 'big-kids',
@@ -108,7 +112,7 @@ const allProducts: Product[] = [
     id: '8',
     name: 'Revolution 6 Women',
     price: 65.00,
-    image: '/src/assets/shoe-4.jpg',
+    image: shoe4,
     category: 'Running',
     gender: 'women',
     ageGroup: 'adult',
@@ -120,7 +124,7 @@ const allProducts: Product[] = [
     id: '9',
     name: 'Little Swoosh Sneakers',
     price: 45.00,
-    image: '/src/assets/shoe-1.jpg',
+    image: shoe1,
     category: 'Lifestyle',
     gender: 'kids',
     ageGroup: 'little-kids',
@@ -132,7 +136,7 @@ const allProducts: Product[] = [
     id: '10',
     name: 'Youth Basketball Pro',
     price: 85.00,
-    image: '/src/assets/shoe-2.jpg',
+    image: shoe2,
     category: 'Basketball',
     gender: 'kids',
     ageGroup: 'big-kids',

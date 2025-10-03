@@ -12,16 +12,16 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-black text-white">
+      <div className="nike-container py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">FIND A STORE</h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
+            <h3 className="text-lg font-bold text-white mb-6">FIND A STORE</h3>
+            <ul className="space-y-3 text-sm text-gray-300">
               <li>
                 <button 
                   onClick={() => handleNavClick("/store-locator")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Find a Store
                 </button>
@@ -29,7 +29,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/auth")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Become a Member
                 </button>
@@ -37,7 +37,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/newsletter")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Sign Up for Email
                 </button>
@@ -45,7 +45,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/contact")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Send Us Feedback
                 </button>
@@ -53,12 +53,12 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">GET HELP</h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
+            <h3 className="text-lg font-bold text-white mb-6">GET HELP</h3>
+            <ul className="space-y-3 text-sm text-gray-300">
               <li>
                 <button 
                   onClick={() => handleNavClick("/order-status")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Order Status
                 </button>
@@ -66,7 +66,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/delivery")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Delivery
                 </button>
@@ -74,7 +74,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/returns")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Returns
                 </button>
@@ -82,7 +82,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/contact")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Contact Us
                 </button>
@@ -90,12 +90,12 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">ABOUT NIKE</h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
+            <h3 className="text-lg font-bold text-white mb-6">ABOUT NIKE</h3>
+            <ul className="space-y-3 text-sm text-gray-300">
               <li>
                 <button 
                   onClick={() => handleNavClick("/news")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   News
                 </button>
@@ -103,7 +103,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/careers")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Careers
                 </button>
@@ -111,7 +111,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/investors")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Investors
                 </button>
@@ -119,7 +119,7 @@ export const Footer = () => {
               <li>
                 <button 
                   onClick={() => handleNavClick("/sustainability")}
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-secondary transition-colors text-left block w-full"
                 >
                   Sustainability
                 </button>
@@ -127,7 +127,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">FOLLOW US</h3>
+            <h3 className="text-lg font-bold text-white mb-6">FOLLOW US</h3>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -160,10 +160,10 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="pt-8 border-t border-primary-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>© 2025 Nike E-Commerce by Tonde. All Rights Reserved</p>
-            <p className="text-center">
+        <div className="pt-12 border-t border-gray-800">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-sm text-gray-400">
+            <p className="text-center lg:text-left">© 2025 Nike E-Commerce by Tonde. All Rights Reserved</p>
+            <p className="text-center lg:text-right">
               <span className="text-secondary font-semibold">Developed by Tonde</span> | 
               Nike-inspired design for educational purposes
             </p>

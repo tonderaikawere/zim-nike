@@ -29,6 +29,12 @@ All colors MUST be HSL.
     --accent: 24 95% 53%;
     --accent-foreground: 0 0% 100%;
 
+    /* Nike brand colors */
+    --nike-orange: 24 95% 53%;
+    --nike-black: 0 0% 10%;
+    --nike-white: 0 0% 100%;
+    --nike-gray: 0 0% 95%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
@@ -82,5 +88,33 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+}
+
+@layer components {
+  /* Nike-inspired components */
+  .nike-button {
+    @apply bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .nike-button-secondary {
+    @apply bg-white text-black border-2 border-black px-6 py-3 rounded-full font-medium hover:bg-black hover:text-white transition-all duration-300;
+  }
+  
+  .nike-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .nike-hero-text {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+  }
+  
+  .nike-section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .nike-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 }

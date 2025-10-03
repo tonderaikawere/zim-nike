@@ -9,6 +9,7 @@ import { scrollToTop } from "@/hooks/use-scroll-to-top";
 export const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { performSearch, searchResults, isSearching, clearSearch } = useSearch();
   const navigate = useNavigate();
 
@@ -24,6 +25,7 @@ export const Header = () => {
   const handleNavClick = (path: string) => {
     navigate(path);
     scrollToTop();
+    setIsMobileMenuOpen(false); // Close mobile menu when navigating
   };
 
   const handleProductClick = (productId: string) => {
@@ -37,8 +39,13 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-8">
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
           <button 
             onClick={() => handleNavClick("/")}
@@ -160,6 +167,82 @@ export const Header = () => {
           <ShoppingCart />
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <nav className="container mx-auto px-4 py-4 space-y-4">
+            <button 
+              onClick={() => handleNavClick("/new-featured")}
+              className="block w-full text-left text-lg font-medium hover:text-secondary transition-colors py-2"
+            >
+              New & Featured
+            </button>
+            <button 
+              onClick={() => handleNavClick("/men")}
+              className="block w-full text-left text-lg font-medium hover:text-secondary transition-colors py-2"
+            >
+              Men
+            </button>
+            <button 
+              onClick={() => handleNavClick("/women")}
+              className="block w-full text-left text-lg font-medium hover:text-secondary transition-colors py-2"
+            >
+              Women
+            </button>
+            <button 
+              onClick={() => handleNavClick("/kids")}
+              className="block w-full text-left text-lg font-medium hover:text-secondary transition-colors py-2"
+            >
+              Kids
+            </button>
+            <button 
+              onClick={() => handleNavClick("/sale")}
+              className="block w-full text-left text-lg font-medium hover:text-secondary transition-colors py-2"
+            >
+              Sale
+            </button>
+            
+            {/* Mobile Search */}
+            <div className="pt-4 border-t">
+              <form onSubmit={handleSearch} className="flex items-center gap-2 rounded-full bg-muted px-4 py-2">
+                <Search className="h-4 w-4 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    if (e.target.value) {
+                      performSearch(e.target.value);
+                      setIsSearchOpen(true);
+                    } else {
+                      setIsSearchOpen(false);
+                      clearSearch();
+                    }
+                  }}
+                  className="bg-transparent text-sm outline-none flex-1"
+                />
+                {searchQuery && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="h-4 w-4 p-0"
+                    onClick={() => {
+                      setSearchQuery("");
+                      setIsSearchOpen(false);
+                      clearSearch();
+                    }}
+                  >
+                    <X className="h-3 w-3" />
+                  </Button>
+                )}
+              </form>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
